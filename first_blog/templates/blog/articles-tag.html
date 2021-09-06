@@ -30,7 +30,7 @@
                 <label class="btn btn-outline-primary" for="btnradio2">Сначала старые</label>
             </div>
             <!-- Post preview-->
-            {% for item in page_obj %}
+            {% for item in articles %}
                 {% with item as item %}
                 {% include 'blog/item_article.html' %}
                 {% endwith %}

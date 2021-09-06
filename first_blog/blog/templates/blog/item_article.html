@@ -1,0 +1,10 @@
+<div class="post-preview">
+    <a href="{% url 'post' post_id=item.pk %}">
+        <h2 class="post-title">{{ item.title }}</h2>
+        <h3 class="post-subtitle">{{ item.text|striptags|truncatewords:7 }}</h3>
+    </a>
+    <p class="post-meta">
+        Опубликовано: {{ item.date_created }}
+    </p>
+    {% for t in item.tag.all %}<a href="{% url 'tag' tag_id=t.pk %}">#<span style="font-style: italic;">{{t}}</span></a> {% endfor %}
+</div>
